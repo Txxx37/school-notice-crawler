@@ -15,8 +15,8 @@ def send_emails_with_notices():
         connection = mysql.connector.connect(
             host='localhost',
             user='root',
-            password='123456',  # 数据库密码
-            database='spider_db',
+            password='your_password',  # 数据库密码
+            database='yourr_db',
             charset='utf8mb4',
             collation='utf8mb4_unicode_ci'
         )
@@ -51,9 +51,9 @@ def send_emails_with_notices():
                     body += f"• {title}\n  {url}\n\n"
                 
                 # 发送邮件
-                sender_email = "2191370750@qq.com"  # 发送QQ邮箱
-                receiver_email = "1103569500@qq.com"  # 接收邮箱
-                password = "dsjneitbsyxfdjai"  # QQ邮箱授权码
+                sender_email = "addressor@email.com"  # 发送邮箱
+                receiver_email = "your@email.com  # 接收邮箱
+                password = "your_code"  # 邮箱授权码
                 
                 message = MIMEMultipart()
                 message["From"] = sender_email
