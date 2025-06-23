@@ -15,8 +15,8 @@ def create_database_connection():
         connection = mysql.connector.connect(
             host='localhost',
             user='root',  # MySQL用户名
-            password='123456',  # MySQL密码
-            database='spider_db'  # 数据库名称
+            password='your_password',  # MySQL密码
+            database='your_database'  # 数据库名称
         )
         return connection
     except Error as e:
@@ -210,7 +210,7 @@ def scrape_notifications(mode='history'):
     # 创建数据表
     create_tables(connection)
     
-    base_url = 'https://www.dufe.edu.cn/r_6'
+    base_url = 'http://your_university'#你的学校通知网址
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
         'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
@@ -264,8 +264,8 @@ def scrape_notifications(mode='history'):
                     if not href:
                         continue
                     
-                    full_url = f"https://www.dufe.edu.cn/{href}" if not href.startswith('http') else href
-                    
+                    full_url = f"https://www.your_university/{href}" if not href.startswith('http') else href
+                    #改为你的学校通知网址
                     # Get the date from the span
                     date_span = item.find('span')
                     if not date_span:
